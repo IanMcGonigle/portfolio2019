@@ -1,0 +1,378 @@
+@import "variables";
+@import "normalize";
+@mixin bp($point) {
+   @if $point == xlarge{
+    @media (min-width: 1600px ) {
+       @content;
+    }
+  }
+  @else if $point == desktop {
+     @media (min-width: 1120px){
+      @content;
+    }
+  }
+  @else if $point == laptop {
+     @media (min-width: 1024px){
+      @content;
+    }
+  }
+  @else if $point == tablet {
+     @media (min-width: 800px){
+      @content;
+    }
+  }
+  @else if $point == phablet {
+     @media (min-width: 600px){
+      @content;
+    }
+  }
+}
+@mixin shadows($color) {
+  h1 {
+    text-shadow: 0 1px 1px $color;
+  }
+
+  p {
+    text-shadow: 0 1px 1px $color;
+  }
+}
+@mixin blend($mode, $img) {
+   @supports (background-blend-mode: $mode){
+    background-image: url($img);
+    background-blend-mode: $mode;
+  }
+}
+
+html {
+  box-sizing: border-box;
+  font: red;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Karla', sans-serif;
+  line-height: 1.8em;
+  @include bp(desktop) {
+    // font-size: 1.3rem;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: $display;
+}
+
+h1 {
+  font-size: 4rem;
+  @include bp(desktop) {
+    font-size: 7rem;
+  }
+}
+
+.section {
+  position: relative;
+  padding: 2em;
+  filter: grayscale(80%);
+  transition: filter 200ms ease-out;
+
+  h1 {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 500ms cubic-bezier(.56,.74,.25,1.31);
+  }
+
+  p {
+    opacity: 0;
+    transition: all 600ms cubic-bezier(.56,.74,.25,1.31);
+  }
+
+  &.active {
+    filter: grayscale(0);
+
+    h1 {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    p {
+      opacity: 1;
+    }
+
+  }
+  @include bp(laptop) {
+    padding: 2em 4em;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__intro {
+    background-color: $pink;
+    width: 100 vw;
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+    @include blend(screen,"https://www.toptal.com/designers/subtlepatterns/patterns//memphis-mini-dark.png" );
+    @include shadows( darken($pink, 25%) );
+  }
+
+  &__about {
+    background: $green;
+    @include blend(exclusion,"https://www.toptal.com/designers/subtlepatterns/patterns/dark-honeycomb.png" );
+    color: darken( $green, 40%);
+    @include shadows( darken($brown, 5%) );
+
+    h1 {
+      color: $yellow;
+    }
+  }
+
+  &__work {
+    background: $yellow;
+    color: $pink;
+    @include blend(color-dodge,"https://www.toptal.com/designers/subtlepatterns/patterns/memphis-mini-dark.png" );
+    @include shadows( darken($pink, 15%) );
+
+    h1 {
+      text-align: center;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  }
+
+  &__tools {
+    background-color: $brown;
+    @include blend(soft-light,"https://www.toptal.com/designers/subtlepatterns/patterns/dark-honeycomb.png" );
+    color: $yellow;
+    @include shadows( darken($brown, 25%) );
+    text-align: center;
+  }
+}
+
+.headline {
+  color: $yellow;
+
+  &__name {
+    color: white;
+    display: block;
+    font-size: 16vmin;
+    line-height: 4rem;
+    line-height: .85em;
+    @include bp(laptop) {
+      font-size: 20vmin;
+      line-height: 8rem;
+    }
+    @include bp(xlarge) {
+      font-size: 25vmin;
+      line-height: 10rem;
+    }
+  }
+
+  &__title {
+    font-size: .75em;
+    line-height: .75em;
+    @include bp(tablet) {
+      // font-size: 1em;
+      line-height: 1.25em;
+    }
+  }
+}
+
+.about {
+  &__selfie {
+    border: 20px solid white;
+    border-radius: 50%;
+  }
+}
+
+.work {
+  background: $yellow;
+  color: $pink;
+
+  &__samples {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 5em;
+    @include bp(laptop) {
+      &:hover {
+        .work__sample:not(:hover) {
+          filter: blur(2px) grayscale(100%);
+          transform: scale(0.95);
+        }
+      }
+    }
+  }
+
+  &__sample {
+    background: white;
+    color: $pink;
+    border: .3rem solid $pink;
+    margin: .5em;
+    padding-bottom: .5rem;
+    border-radius: .3rem;
+    box-shadow: 0 0 1em 0 darken($yellow, 25%);
+    transition: all 100ms ease-out;
+    @include bp(tablet) {
+      width: calc(50% - 1rem);
+    }
+    @include bp(xlarge) {
+      width: calc(25% - 1rem);
+    }
+
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $pink;
+    text-shadow: 0 .75px 0 darken($brown, 15%);
+  }
+
+  &__thumb {
+    width: 100%;
+  }
+
+  &__description {
+    padding: 0 .9rem;
+  }
+
+  &__title {
+    font-family: $display;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  &__body {
+    margin: 0;
+  }
+
+  &__tools {
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: bold;
+    padding-bottom: .5em;
+
+    li {
+      margin: 0 .5em;
+    }
+  }
+}
+
+.tools {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__item {
+    $size: 10vw;
+    width: $size;
+    height: $size;
+    min-width: 60px;
+    min-height: 60px;
+    border-radius: $size;
+    background: white;
+    padding: 10px;
+    display: flex;
+    align-content: center;
+    margin: .5rem;
+    overflow: hidden;
+    box-shadow: 0 0 .5em 0 darken($brown, 15%);
+    border: 5px solid $yellow;
+    transition: transform 200ms cubic-bezier(.29,.58,.19,1.33);
+
+    &:hover {
+      transform: scale(1.2);
+    }
+    @include bp(tablet) {
+      $size: 10vw;
+      padding: $size * .15;
+      width: $size;
+      height: $size;
+      border-radius: $size;
+    }
+
+    img,
+    svg {
+      width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+
+.footer {
+  position: fixed;
+  background: rgba(0,0,0,0.45);
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  transition: background-color 500ms ease-out;
+
+  &:hover {
+    background: rgba(0,0,0,0.65);
+  }
+  @include bp(tablet) {
+    top: 0;
+    bottom: auto;
+    background: rgba(0,0,0,0.05);
+    // mix-blend-mode: multiply;
+  }
+}
+
+.contact {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include bp(tablet) {
+    justify-content: flex-end;
+  }
+
+  &__link {
+    font-family: $display;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    margin: 0 .6rem;
+    text-shadow: 0 1px 1px black;
+    transition: color 200ms ease-out;
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: .75em;
+      max-height: .75em;
+      margin: 0 .25em;
+    }
+
+    &:visited {
+      color: white;
+    }
+
+    &:hover {
+      color: $yellow;
+    }
+  }
+}
+
+.on-enter {
+  transform: translateY(500);
+}
