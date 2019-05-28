@@ -2,27 +2,27 @@
 @import "normalize";
 @mixin bp($point) {
    @if $point == xlarge{
-    @media (min-width: 1600px ) {
+    @media only screen and (min-width: 1600px ) {
        @content;
     }
   }
   @else if $point == desktop {
-     @media (min-width: 1120px){
+     @media only screen and (min-width: 1120px){
       @content;
     }
   }
   @else if $point == laptop {
-     @media (min-width: 1024px){
+     @media only screen and (min-width: 1024px){
       @content;
     }
   }
   @else if $point == tablet {
-     @media (min-width: 800px){
+     @media only screen and (min-width: 800px){
       @content;
     }
   }
   @else if $point == phablet {
-     @media (min-width: 600px){
+     @media only screen and (min-width: 600px){
       @content;
     }
   }
@@ -70,8 +70,10 @@ h3 {
 
 h1 {
   font-size: 4rem;
+  line-height: 3.75rem;
   @include bp(desktop) {
     font-size: 7rem;
+    line-height: 6.75rem;
   }
 }
 
@@ -113,6 +115,11 @@ h1 {
     justify-content: center;
   }
 
+  &__wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
   &__intro {
     background-color: $pink;
     width: 100 vw;
@@ -131,6 +138,19 @@ h1 {
 
     h1 {
       color: $yellow;
+    }
+
+    a {
+      color: $yellow;
+
+      &:visited {
+        color: $yellow;
+      }
+
+      &:hover {
+        color: white;
+      }
+
     }
   }
 
@@ -183,7 +203,6 @@ h1 {
     font-size: .75em;
     line-height: .75em;
     @include bp(tablet) {
-      // font-size: 1em;
       line-height: 1.25em;
     }
   }
@@ -206,25 +225,15 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     padding: 0 5em;
-    @include bp(laptop) {
-      &:hover {
-        .work__sample:not(:hover) {
-          filter: blur(2px) grayscale(100%);
-          transform: scale(0.95);
-        }
-      }
-    }
   }
 
   &__sample {
     background: white;
-    color: $pink;
-    border: .3rem solid $pink;
     margin: .5em;
     padding-bottom: .5rem;
     border-radius: .3rem;
+    overflow: hidden;
     box-shadow: 0 0 1em 0 darken($yellow, 25%);
-    transition: all 100ms ease-out;
     @include bp(tablet) {
       width: calc(50% - 1rem);
     }
@@ -232,9 +241,17 @@ h1 {
       width: calc(25% - 1rem);
     }
 
+    transition: all 100ms ease-out;
+
+    &.blurred {
+      filter: blur(2px) grayscale(100%);
+      transform: scale(0.95);
+    }
+
   }
 
   &__link {
+    display: block;
     text-decoration: none;
     color: $pink;
     text-shadow: 0 .75px 0 darken($brown, 15%);
@@ -242,20 +259,26 @@ h1 {
 
   &__thumb {
     width: 100%;
+
   }
 
   &__description {
-    padding: 0 .9rem;
+    padding: 1em;
+    margin: 0;
+    text-align: center;
   }
 
   &__title {
     font-family: $display;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.65rem;
+    margin-bottom: .2em;
   }
 
   &__body {
     margin: 0;
+    font-size: .8rem;
+    line-height: 1.5;
   }
 
   &__tools {

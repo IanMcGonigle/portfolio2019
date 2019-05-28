@@ -1,133 +1,106 @@
-html
+doctype html
+html(lang="en")
   head
+    title
+      | Ian McGonigle - Web developer
+    meta(charset="UTF-8")
+    meta(name="description" content="A portfolio showcasing web development work from Ian McGonigle")
+    meta(name="viewport" content="initial-scale=1.0, width=device-width")
     link(href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:700|Karla', rel='stylesheet')
     link(href='./css/styles.css', rel='stylesheet')
   body
     section.section.section__intro
-      h1.headline
-        span.headline__name Ian McGonigle
-        span.headline__title Web Developer
+      .section__wrapper
+        h1.headline
+          span.headline__name Ian McGonigle
+          span.headline__title Web Developer
     section.section.section__about
-      h1 About me
-      p
-        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut erat
-        | tristique, condimentum est volutpat, vehicula libero. Cras sed tristique
-        | dui, ut efficitur odio. Praesent sit amet mi a sapien faucibus blandit.
-        | Cras pharetra lobortis tortor vitae gravida. Nulla hendrerit mi non
-        | lacinia blandit. Nullam suscipit tellus nec risus dictum viverra. Nunc
-        | nibh neque, accumsan in finibus sit amet, iaculis eget eros. Cras tempor
-        | efficitur risus, pharetra pellentesque massa facilisis eu. Phasellus
-        | imperdiet varius elit vel tincidunt.
+      .section__wrapper
+          h1 About me
+          p
+            |My name is Ian McGonigle and I’m a web developer, with a focus on the front-end. I live and work in Toronto. I’ve been creating branded online content professionally since 2005. I am currently focused the React.js ecosystem. This includes web technologies like React, Redux, and React-Native. I am passionate about staying on top of rapidly changing web technologies. I love determining how to apply these technologies, creating highly interactive user interfaces.  I currently am a Senior Front-end Developer at #[a(href="https://www.rbccm.com/en/" target="_blank") RBC Capital Markets].
     section.section.section__work
-      h1 Work Samples
-      ul.work__samples
-        li.work__sample
-          a.work__link(href='#')
-            img.work__thumb(src='https://via.placeholder.com/630x300', alt='MEC Get outside')
-            dl.work__description
-              dt.work__title MEC Good Times Outside
-              dd.work__body
-                | Iaculis nunc sed augue lacus viverra vitae congue eu. Ac
-                | tincidunt vitae semper quis lectus nulla. Id volutpat lacus
-                | laoreet non curabitur gravida arcu. In nisl nisi scelerisque eu.
-                | Odio facilisis mauris sit amet. Volutpat odio facilisis mauris
-                | sit amet massa. Sodales ut etiam sit amet nisl purus in. Euismod
-                | lacinia at quis risus sed vulputate.
-            ul.work__tools
-              li React
-              li Redux
-              li Express
-              li SCSS
-              li WordPres
-        li.work__sample
-          a.work__link(href='#')
-            img.work__thumb(src='https://via.placeholder.com/630x300', alt='MEC Get outside')
-            dl.work__description
-              dt.work__title Four Seasons
-              dd.work__body
-                | Iaculis nunc sed augue lacus viverra vitae congue eu. Ac
-                | tincidunt vitae semper quis lectus nulla. Id volutpat lacus
-                | laoreet non curabitur gravida arcu. In nisl nisi scelerisque eu.
-                | Odio facilisis mauris sit amet. Volutpat odio facilisis mauris
-                | sit amet massa. Sodales ut etiam sit amet nisl purus in. Euismod
-                | lacinia at quis risus sed vulputate.
-            ul.work__tools
-              li React
-              li Redux
-              li Handlebars
-              li SCSS
-              li Node
-        li.work__sample
-          a.work__link(href='#')
-            img.work__thumb(src='https://via.placeholder.com/630x300', alt='MEC Get outside')
-            dl.work__description
-              dt.work__title MEC Good Times Outside
-              dd.work__body
-                | Iaculis nunc sed augue lacus viverra vitae congue eu. Ac
-                | tincidunt vitae semper quis lectus nulla. Id volutpat lacus
-                | laoreet non curabitur gravida arcu. In nisl nisi scelerisque eu.
-                | Odio facilisis mauris sit amet. Volutpat odio facilisis mauris
-                | sit amet massa. Sodales ut etiam sit amet nisl purus in. Euismod
-                | lacinia at quis risus sed vulputate.
-            ul.work__tools
-              li React
-              li Redux
-              li Express
-              li SCSS
-              li WordPres
-        li.work__sample
-          a.work__link(href='#')
-            img.work__thumb(src='https://via.placeholder.com/630x300', alt='MEC Get outside')
-            dl.work__description
-              dt.work__title Four Seasons
-              dd.work__body
-                | Iaculis nunc sed augue lacus viverra vitae congue eu. Ac
-                | tincidunt vitae semper quis lectus nulla. Id volutpat lacus
-                | laoreet non curabitur gravida arcu. In nisl nisi scelerisque eu.
-                | Odio facilisis mauris sit amet. Volutpat odio facilisis mauris
-                | sit amet massa. Sodales ut etiam sit amet nisl purus in. Euismod
-                | lacinia at quis risus sed vulputate.
-            ul.work__tools
-              li React
-              li Redux
-              li Handlebars
-              li SCSS
-              li Node
+      .section__wrapper
+        h1 Work Samples
+        ul.work__samples
+          li.work__sample
+            a.work__link(href='https://gto.mec.ca' target="_blank" rel="noreferrer")
+              img.work__thumb(src='./images/mec.jpg', alt='MEC Get outside')
+              dl.work__description
+                dt.work__title MEC Good Times&nbsp;Outside
+                dd.work__body
+                  | Promotioal website for MEC using React, Redux, Express, SCSS and WordPress
+          li.work__sample
+            a.work__link(href='https://www.fourseasons.com/' target="_blank" rel="noreferrer")
+              img.work__thumb(src='./images/fourseasons_1.png', alt='Four Seasons.com')
+              dl.work__description
+                dt.work__title Four Seasons
+                dd.work__body
+                  | Four Seasons.com website using Handlebars, React, Redux, Express, SCSS and Node
+          li.work__sample
+            a.work__link(href='https://www.fourseasons.com/privatejet/' target="_blank" rel="noreferrer")
+              img.work__thumb(src='./images/jet.png', alt='Four Seasons Private Jet')
+              dl.work__description
+                dt.work__title Four Seasons Private&nbsp;Jet
+                dd.work__body
+                  | Four Seasons Private Jet website using Handlebars, Gulp,  SCSS and Node
+          li.work__sample
+            a.work__link(href='https://www.telus.com/en/on/business' target="_blank" rel="noreferrer")
+              img.work__thumb(src='./images/telus.jpg', alt='Telus Business')
+              dl.work__description
+                dt.work__title Telus Business
+                dd.work__body
+                  | Telus Business website using SCSS, jQuery, HAML, Ruby on Rails, and Bootstrap
+          li.work__sample
+            a.work__link(href='https://mattamyhomes.com/' target="_blank" rel="noreferrer")
+              img.work__thumb(src='./images/mattamy.png', alt='Mattamy Homes')
+              dl.work__description
+                dt.work__title Mattamy Homes
+                dd.work__body
+                  | Mattamy Homes SiteCore site using Jade, LESS, jQuery, and Gulp
+          li.work__sample
+            a.work__link(href='https://www.tourismnewbrunswick.ca/' target="_blank" rel="noreferrer")
+              img.work__thumb(src='./images/tnb.jpg', alt='Tourism New Brunswick')
+              dl.work__description
+                dt.work__title Tourism New Brunswick
+                dd.work__body
+                  | Province of New Brunswick's Tourism SiteCore site using HTML, LESS, jQuery, and Grunt
     section.section.section__tools
-      h1 Tools
-      p
-        | These are some of the tools I use:
-      ul.tools
-        li.tools__item
-          img.tools_icon(src='https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg', alt='HTML')
-        li.tools__item
-          img.tools_icon(src='https://upload.wikimedia.org/wikipedia/commons/3/3d/CSS.3.svg', alt='CSS')
-        li.tools__item
-          img.tools_icon(src='https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg', alt='JavaScript')
-        li.tools__item
-          img.tools_icon(src='https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg', alt='Sass')
-        li.tools__item
-          img.tools_icon(src='https://upload.wikimedia.org/wikipedia/commons/4/47/React.svg', alt='React.js')
-        li.tools__item
-          svg(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 100 100', alt='Redux')
-            g(fill='#764ABC')
-              path(d='M65.6 65.4c2.9-.3 5.1-2.8 5-5.8-.1-3-2.6-5.4-5.6-5.4h-.2c-3.1.1-5.5 2.7-5.4 5.8.1 1.5.7 2.8 1.6 3.7-3.4 6.7-8.6 11.6-16.4 15.7-5.3 2.8-10.8 3.8-16.3 3.1-4.5-.6-8-2.6-10.2-5.9-3.2-4.9-3.5-10.2-.8-15.5 1.9-3.8 4.9-6.6 6.8-8-.4-1.3-1-3.5-1.3-5.1-14.5 10.5-13 24.7-8.6 31.4 3.3 5 10 8.1 17.4 8.1 2 0 4-.2 6-.7 12.8-2.5 22.5-10.1 28-21.4z')
-              path(d='M83.2 53c-7.6-8.9-18.8-13.8-31.6-13.8H50c-.9-1.8-2.8-3-4.9-3h-.2c-3.1.1-5.5 2.7-5.4 5.8.1 3 2.6 5.4 5.6 5.4h.2c2.2-.1 4.1-1.5 4.9-3.4H52c7.6 0 14.8 2.2 21.3 6.5 5 3.3 8.6 7.6 10.6 12.8 1.7 4.2 1.6 8.3-.2 11.8-2.8 5.3-7.5 8.2-13.7 8.2-4 0-7.8-1.2-9.8-2.1-1.1 1-3.1 2.6-4.5 3.6 4.3 2 8.7 3.1 12.9 3.1 9.6 0 16.7-5.3 19.4-10.6 2.9-5.8 2.7-15.8-4.8-24.3z')
-              path(d='M32.4 67.1c.1 3 2.6 5.4 5.6 5.4h.2c3.1-.1 5.5-2.7 5.4-5.8-.1-3-2.6-5.4-5.6-5.4h-.2c-.2 0-.5 0-.7.1-4.1-6.8-5.8-14.2-5.2-22.2.4-6 2.4-11.2 5.9-15.5 2.9-3.7 8.5-5.5 12.3-5.6 10.6-.2 15.1 13 15.4 18.3 1.3.3 3.5 1 5 1.5-1.2-16.2-11.2-24.6-20.8-24.6-9 0-17.3 6.5-20.6 16.1-4.6 12.8-1.6 25.1 4 34.8-.5.7-.8 1.8-.7 2.9z')
+      .section__wrapper
+        h1 Tools
+        p
+          | These are some of the tools I use:
+        ul.tools
+          li.tools__item
+            img.tools_icon(src='https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg', alt='HTML')
+          li.tools__item
+            img.tools_icon(src='https://upload.wikimedia.org/wikipedia/commons/3/3d/CSS.3.svg', alt='CSS')
+          li.tools__item
+            img.tools_icon(src='https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg', alt='JavaScript')
+          li.tools__item
+            img.tools_icon(src='https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg', alt='Sass')
+          li.tools__item
+            img.tools_icon(src='https://upload.wikimedia.org/wikipedia/commons/4/47/React.svg', alt='React.js')
+          li.tools__item
+            svg(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 100 100', alt='Redux')
+              g(fill='#764ABC')
+                path(d='M65.6 65.4c2.9-.3 5.1-2.8 5-5.8-.1-3-2.6-5.4-5.6-5.4h-.2c-3.1.1-5.5 2.7-5.4 5.8.1 1.5.7 2.8 1.6 3.7-3.4 6.7-8.6 11.6-16.4 15.7-5.3 2.8-10.8 3.8-16.3 3.1-4.5-.6-8-2.6-10.2-5.9-3.2-4.9-3.5-10.2-.8-15.5 1.9-3.8 4.9-6.6 6.8-8-.4-1.3-1-3.5-1.3-5.1-14.5 10.5-13 24.7-8.6 31.4 3.3 5 10 8.1 17.4 8.1 2 0 4-.2 6-.7 12.8-2.5 22.5-10.1 28-21.4z')
+                path(d='M83.2 53c-7.6-8.9-18.8-13.8-31.6-13.8H50c-.9-1.8-2.8-3-4.9-3h-.2c-3.1.1-5.5 2.7-5.4 5.8.1 3 2.6 5.4 5.6 5.4h.2c2.2-.1 4.1-1.5 4.9-3.4H52c7.6 0 14.8 2.2 21.3 6.5 5 3.3 8.6 7.6 10.6 12.8 1.7 4.2 1.6 8.3-.2 11.8-2.8 5.3-7.5 8.2-13.7 8.2-4 0-7.8-1.2-9.8-2.1-1.1 1-3.1 2.6-4.5 3.6 4.3 2 8.7 3.1 12.9 3.1 9.6 0 16.7-5.3 19.4-10.6 2.9-5.8 2.7-15.8-4.8-24.3z')
+                path(d='M32.4 67.1c.1 3 2.6 5.4 5.6 5.4h.2c3.1-.1 5.5-2.7 5.4-5.8-.1-3-2.6-5.4-5.6-5.4h-.2c-.2 0-.5 0-.7.1-4.1-6.8-5.8-14.2-5.2-22.2.4-6 2.4-11.2 5.9-15.5 2.9-3.7 8.5-5.5 12.3-5.6 10.6-.2 15.1 13 15.4 18.3 1.3.3 3.5 1 5 1.5-1.2-16.2-11.2-24.6-20.8-24.6-9 0-17.3 6.5-20.6 16.1-4.6 12.8-1.6 25.1 4 34.8-.5.7-.8 1.8-.7 2.9z')
     footer.footer
       ul.contact
         li
-          a.contact__link.contact__linkedin(href='#')
+          a.contact__link.contact__linkedin(href='https://www.linkedin.com/in/ianmcgonigle/' target="_blank"  rel="noreferrer")
             svg(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 448 512')
               path(style='fill:currentColor', d='M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z')
             |             Linked in
         li
-          a.contact__link.contact__resume(href='#')
+          a.contact__link.contact__resume(href='https://drive.google.com/file/d/1_Ol7VUIhSlvvLo8xR-1kFV-XAoS1dCAx/view?usp=sharing' target="_blank"  rel="noreferrer")
             svg(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 384 512')
               path(style='fill:currentColor', d='M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm64 236c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-64c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8zm0-72v8c0 6.6-5.4 12-12 12H108c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12zm96-114.1v6.1H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z')
-            |             Resume
+            |             Résumé
         li
-          a.contact__link.contact__contact(href='#')
+          a.contact__link.contact__contact(href='mailto:ian@magoo.ca')
             svg#svg2(xmlns:dc='http://purl.org/dc/elements/1.1/', xmlns:cc='http://creativecommons.org/ns#', xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#', xmlns:svg='http://www.w3.org/2000/svg', xmlns='http://www.w3.org/2000/svg', viewBox='0 -256 1850 1850', version='1.1', inkscape:version='0.48.3.1 r9886', width='100%', height='100%')
               g#g4(transform='matrix(1,0,0,-1,30.372881,1252.3051)')
                 path#path6(d='M 1792,826 V 32 q 0,-66 -47,-113 -47,-47 -113,-47 H 160 Q 94,-128 47,-81 0,-34 0,32 V 826 Q 44,777 101,739 463,493 598,394 655,352 690.5,328.5 726,305 785,280.5 844,256 895,256 h 1 1 q 51,0 110,24.5 59,24.5 94.5,48 35.5,23.5 92.5,65.5 170,123 498,345 57,39 100,87 z m 0,294 q 0,-79 -49,-151 -49,-72 -122,-123 -376,-261 -468,-325 -10,-7 -42.5,-30.5 -32.5,-23.5 -54,-38 Q 1035,438 1004.5,420 974,402 947,393 q -27,-9 -50,-9 h -1 -1 q -23,0 -50,9 -27,9 -57.5,27 -30.5,18 -52,32.5 -21.5,14.5 -54,38 Q 649,514 639,521 548,585 377,703.5 206,822 172,846 110,888 55,961.5 0,1035 0,1098 q 0,78 41.5,130 41.5,52 118.5,52 h 1472 q 65,0 112.5,-47 47.5,-47 47.5,-113 z', inkscape:connector-curvature='0', style='fill:currentColor')

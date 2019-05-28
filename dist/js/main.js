@@ -32,14 +32,41 @@ var init = function init() {
   var sections = [].concat(_toConsumableArray(document.querySelectorAll("section")));
   var updateSections = function updateSections() {
     sections.forEach(function (section) {
-      var onScreen = isInViewport(section);
-      console.log("classlist ", section.classList, onScreen);
-      onScreen ? section.classList.add("active") : section.classList.remove("active");
+      if (isInViewport(section)) {
+        section.classList.add("active");
+      }
     });
   };
   var handleScroll = debounce(updateSections, 250);
   window.addEventListener("scroll", handleScroll);
   updateSections();
+
+  var samples = [].concat(_toConsumableArray(document.querySelectorAll(".work__sample")));
+
+  var mouseOn = function mouseOn() {
+    var _this = this;
+
+    // alert("hover");
+    samples.forEach(function (sample) {
+      if (_this != sample) {
+        sample.classList.add("blurred");
+      } else {
+        sample.classList.remove("blurred");
+      }
+    });
+  };
+
+  var mouseOff = function mouseOff() {
+    console.log("mouse off ", this);
+    samples.forEach(function (sample) {
+      return sample.classList.remove("blurred");
+    });
+  };
+
+  samples.forEach(function (sample) {
+    sample.addEventListener("mouseover", mouseOn);
+    sample.addEventListener("mouseout", mouseOff);
+  });
 };
 
 window.onload = init;

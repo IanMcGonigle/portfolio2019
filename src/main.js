@@ -30,16 +30,37 @@ const init = () => {
   const sections = [...document.querySelectorAll("section")];
   const updateSections = () => {
     sections.forEach(section => {
-      const onScreen = isInViewport(section);
-      console.log("classlist ", section.classList, onScreen);
-      onScreen
-        ? section.classList.add("active")
-        : section.classList.remove("active");
+      if (isInViewport(section)) {
+        section.classList.add("active");
+      }
     });
   };
   const handleScroll = debounce(updateSections, 250);
   window.addEventListener("scroll", handleScroll);
   updateSections();
+
+  const samples = [...document.querySelectorAll(".work__sample")];
+
+  const mouseOn = function() {
+    // alert("hover");
+    samples.forEach(sample => {
+      if (this != sample) {
+        sample.classList.add("blurred");
+      } else {
+        sample.classList.remove("blurred");
+      }
+    });
+  };
+
+  const mouseOff = function() {
+    console.log("mouse off ", this);
+    samples.forEach(sample => sample.classList.remove("blurred"));
+  };
+
+  samples.forEach(sample => {
+    sample.addEventListener("mouseover", mouseOn);
+    sample.addEventListener("mouseout", mouseOff);
+  });
 };
 
 window.onload = init;

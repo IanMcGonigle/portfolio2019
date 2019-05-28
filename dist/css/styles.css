@@ -322,10 +322,12 @@ h3 {
   font-family: "Gentium Book Basic", serif; }
 
 h1 {
-  font-size: 4rem; }
-  @media (min-width: 1120px) {
+  font-size: 4rem;
+  line-height: 3.75rem; }
+  @media only screen and (min-width: 1120px) {
     h1 {
-      font-size: 7rem; } }
+      font-size: 7rem;
+      line-height: 6.75rem; } }
 
 .section {
   position: relative;
@@ -346,13 +348,16 @@ h1 {
       transform: translateY(0); }
     .section.active p {
       opacity: 1; }
-  @media (min-width: 1024px) {
+  @media only screen and (min-width: 1024px) {
     .section {
       padding: 2em 4em;
       min-height: 90vh;
       display: flex;
       flex-direction: column;
       justify-content: center; } }
+  .section__wrapper {
+    max-width: 1200px;
+    margin: 0 auto; }
   .section__intro {
     background-color: #c49daf;
     width: 100 vw;
@@ -380,6 +385,12 @@ h1 {
       text-shadow: 0 1px 1px #ae8866; }
     .section__about h1 {
       color: #fcd95a; }
+    .section__about a {
+      color: #fcd95a; }
+      .section__about a:visited {
+        color: #fcd95a; }
+      .section__about a:hover {
+        color: white; }
   .section__work {
     background: #fcd95a;
     color: #c49daf; }
@@ -418,18 +429,18 @@ h1 {
     font-size: 16vmin;
     line-height: 4rem;
     line-height: .85em; }
-    @media (min-width: 1024px) {
+    @media only screen and (min-width: 1024px) {
       .headline__name {
         font-size: 20vmin;
         line-height: 8rem; } }
-    @media (min-width: 1600px) {
+    @media only screen and (min-width: 1600px) {
       .headline__name {
         font-size: 25vmin;
         line-height: 10rem; } }
   .headline__title {
     font-size: .75em;
     line-height: .75em; }
-    @media (min-width: 800px) {
+    @media only screen and (min-width: 800px) {
       .headline__title {
         line-height: 1.25em; } }
 
@@ -446,39 +457,43 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     padding: 0 5em; }
-    @media (min-width: 1024px) {
-      .work__samples:hover .work__sample:not(:hover) {
-        filter: blur(2px) grayscale(100%);
-        transform: scale(0.95); } }
   .work__sample {
     background: white;
-    color: #c49daf;
-    border: 0.3rem solid #c49daf;
     margin: .5em;
     padding-bottom: .5rem;
     border-radius: .3rem;
+    overflow: hidden;
     box-shadow: 0 0 1em 0 #d3a604;
     transition: all 100ms ease-out; }
-    @media (min-width: 800px) {
+    @media only screen and (min-width: 800px) {
       .work__sample {
         width: calc(50% - 1rem); } }
-    @media (min-width: 1600px) {
+    @media only screen and (min-width: 1600px) {
       .work__sample {
         width: calc(25% - 1rem); } }
+    .work__sample.blurred {
+      filter: blur(2px) grayscale(100%);
+      transform: scale(0.95); }
   .work__link {
+    display: block;
     text-decoration: none;
     color: #c49daf;
     text-shadow: 0 0.75px 0 #936f4e; }
   .work__thumb {
     width: 100%; }
   .work__description {
-    padding: 0 .9rem; }
+    padding: 1em;
+    margin: 0;
+    text-align: center; }
   .work__title {
     font-family: "Gentium Book Basic", serif;
     font-weight: bold;
-    font-size: 2rem; }
+    font-size: 1.65rem;
+    margin-bottom: .2em; }
   .work__body {
-    margin: 0; }
+    margin: 0;
+    font-size: .8rem;
+    line-height: 1.5; }
   .work__tools {
     display: flex;
     flex-wrap: wrap;
@@ -511,7 +526,7 @@ h1 {
     transition: transform 200ms cubic-bezier(0.29, 0.58, 0.19, 1.33); }
     .tools__item:hover {
       transform: scale(1.2); }
-    @media (min-width: 800px) {
+    @media only screen and (min-width: 800px) {
       .tools__item {
         padding: 1.5vw;
         width: 10vw;
@@ -532,7 +547,7 @@ h1 {
   transition: background-color 500ms ease-out; }
   .footer:hover {
     background: rgba(0, 0, 0, 0.65); }
-  @media (min-width: 800px) {
+  @media only screen and (min-width: 800px) {
     .footer {
       top: 0;
       bottom: auto;
@@ -546,7 +561,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center; }
-  @media (min-width: 800px) {
+  @media only screen and (min-width: 800px) {
     .contact {
       justify-content: flex-end; } }
   .contact__link {
