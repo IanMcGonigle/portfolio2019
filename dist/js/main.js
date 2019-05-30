@@ -37,7 +37,7 @@ var init = function init() {
       }
     });
   };
-  var handleScroll = debounce(updateSections, 250);
+  var handleScroll = debounce(updateSections, 25);
   window.addEventListener("scroll", handleScroll);
   updateSections();
 
@@ -46,7 +46,6 @@ var init = function init() {
   var mouseOn = function mouseOn() {
     var _this = this;
 
-    // alert("hover");
     samples.forEach(function (sample) {
       if (_this != sample) {
         sample.classList.add("blurred");
@@ -69,4 +68,8 @@ var init = function init() {
   });
 };
 
-window.onload = init;
+// window.onload = init;
+window.addEventListener("DOMContentLoaded", function (event) {
+  console.log("DOM fully loaded and parsed");
+  init();
+});

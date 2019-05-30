@@ -35,14 +35,13 @@ const init = () => {
       }
     });
   };
-  const handleScroll = debounce(updateSections, 250);
+  const handleScroll = debounce(updateSections, 25);
   window.addEventListener("scroll", handleScroll);
   updateSections();
 
   const samples = [...document.querySelectorAll(".work__sample")];
 
   const mouseOn = function() {
-    // alert("hover");
     samples.forEach(sample => {
       if (this != sample) {
         sample.classList.add("blurred");
@@ -63,4 +62,8 @@ const init = () => {
   });
 };
 
-window.onload = init;
+// window.onload = init;
+window.addEventListener("DOMContentLoaded", event => {
+  console.log("DOM fully loaded and parsed");
+  init();
+});
